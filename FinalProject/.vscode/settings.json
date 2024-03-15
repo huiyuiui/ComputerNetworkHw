@@ -1,0 +1,10 @@
+{
+    "C_Cpp.errorSquiggles": "enabled",
+    "files.associations": {
+        "iostream": "cpp",
+        "stdio.h": "c",
+        "sstream": "cpp",
+        "xlocale": "cpp",
+        "xlocnum": "cpp"
+    }
+}

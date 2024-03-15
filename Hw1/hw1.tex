@@ -1,0 +1,80 @@
+\PassOptionsToPackage{quiet}{xeCJK}
+\documentclass[12pt]{article}
+\usepackage{xeCJK}
+\title{Hw1}
+\author{109062135陳家輝}
+\date{\today}
+\begin{document}
+
+\maketitle
+\noindent
+\textbf{
+    1. If the diameter of a network with 100 nodes is 1, what is the minimum number of links in this network?
+}
+\begin{flushleft}
+    Since the diameter of network is 1, that is,
+    any two of them must hop to each other directly.
+    Therefore, any two of them must have a link between them.
+    So, the minimum number of links in this network is:
+\end{flushleft}
+
+\begin{center}
+    $C_{2}^{100}=\frac{100*99}{2}=4950 $
+\end{center}
+
+
+\noindent
+\textbf{
+    2. If the diameter of a network with 100 nodes is 2, what is the minimum number of links in this network?
+}
+\begin{flushleft}
+    \qquad
+    Since the diameter of network is 2,
+    any two of them, except by the mid node, can hop to each other by passing the mid node.
+    And, it only takes 99 links to link the mid node and the others node.
+
+    \qquad
+    So, the minimum number of links in this network is 99.
+\end{flushleft}
+
+\noindent
+\textbf{
+    3. For a network of 100 nodes, if the degree of every node is at most 2, what is the minimum diameter of that network?
+}
+
+\begin{flushleft}
+    \qquad
+    When the degree of every node is 2, that is, any of them can link other 2 nodes.
+    Therefore, we can construct the network into a cycle.
+    Then, when a node wants to hop to any other node, it can go left or go right.
+    But whatever it goes, it takes at most 50 steps to get there.
+    For example, if the number 1 node wants to hop to the number 25 node,
+    it can hop to 2, then 3...until it gets to 25.
+    If it wants to hop to the number 75 node,
+    it can hop to 100, then 99...until it gets to 75.
+
+    \qquad
+    So, the minimum diameter of this network is 50.
+\end{flushleft}
+
+\noindent
+\textbf{
+    4. For a network of 100 nodes, if the degree of every node is at most 3, is it possible that the diameter of this network is not greater than 5?
+}
+
+\begin{flushleft}
+    \qquad
+    Consider a binary tree but level 2 has three nodes, that is, root has three children.
+    Then from level 2, every nodes has two children.
+    This tree consist of 6 level, total nodes in this tree is:
+    \begin{center}
+        $ 1 + 3*2^0 + 3*2^1 + 3*2^2 + 3*2^3 + 3*2^4 = 94 $
+    \end{center}
+    \qquad
+    Clearly, this tree can not contain all 100 nodes, thus,
+    there exist some nodes that if we want to hop from one node to another,
+    we will go exceed 5 steps.
+    So, it is impossible that the network with degree of every node is 3 has diameter not greater than 5.
+\end{flushleft}
+
+\end{document}
